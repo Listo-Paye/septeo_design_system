@@ -1,0 +1,43 @@
+name: septeo_design_system
+description: "Package contenant tout le système UX et UI de Listo Paye. Utilisez le sous-projet widgets_demo pour tester les widgets."
+version: 0.0.1
+homepage: https://design.listo.pro
+repository: https://github.com/Listo-Paye/septeo_design_system
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  animations: ^2.0.11
+  flutter_animate: ^4.5.0
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  flutter_web_plugins:
+    sdk: flutter
+  intl: ^0.19.0
+  super_drag_and_drop: ^0.8.24
+  dotted_border: ^2.1.0
+  file_picker: ^8.1.3
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: lib/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: lib/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: lib/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: lib/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: lib/fonts/Inter-ExtraBold.ttf
+          weight: 800
