@@ -2,8 +2,8 @@ library;
 
 import 'package:flutter/material.dart';
 
-import 'themes/main_theme.dart';
-export 'themes/themes_module.dart';
+import 'foundations/main_theme.dart';
+export 'foundations/foundations_module.dart';
 
 class SepeteoDesignSystem {
   static Themes themes = Themes();

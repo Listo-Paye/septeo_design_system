@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:septeo_design_system/themes/septeo_colors.dart';
-import 'package:septeo_design_system/themes/septeo_text_styles.dart';
+import 'package:septeo_design_system/foundations/septeo_colors.dart';
+import 'package:septeo_design_system/foundations/septeo_text_styles.dart';
 
 final mainTheme = ThemeData(
     primarySwatch: SepteoColors.blue,
@@ -13,7 +13,7 @@ final mainTheme = ThemeData(
       headlineMedium: SepteoTextStyles.headingMediumInter,
       headlineSmall: SepteoTextStyles.headingSmallInter,
       headlineLarge: SepteoTextStyles.headingLargeInter,
-      labelLarge: SepteoTextStyles.captionInter,
+      labelLarge: SepteoTextStyles.bodyMediumInter,
       titleMedium: SepteoTextStyles.headingMediumInter,
       titleSmall: SepteoTextStyles.headingSmallInter,
       titleLarge: SepteoTextStyles.headingLargeInter,

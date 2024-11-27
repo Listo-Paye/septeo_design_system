@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Refactored folder structure
+
 ## 0.0.2
 
 - Added publish workflow

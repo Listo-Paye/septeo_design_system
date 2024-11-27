@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:septeo_design_system/themes/septeo_colors.dart';
+import 'package:septeo_design_system/foundations/septeo_colors.dart';
 
 abstract final class SepteoTextStyles {
   // Inter Regular (w500)

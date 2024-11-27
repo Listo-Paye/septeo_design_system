@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:septeo_design_system/themes/septeo_text_styles.dart';
+import 'package:septeo_design_system/foundations/septeo_text_styles.dart';
 
 class TypographyDocumentation extends StatelessWidget {
   const TypographyDocumentation({super.key});
