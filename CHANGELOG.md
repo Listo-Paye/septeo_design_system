@@ -1,3 +1,7 @@
+## 0.0.4
+- Fixed Widgetbook legacy code
+- Added MarkdownWithHighlight widget without documentation (for now)
+
 ## 0.0.3
 
 - Refactored folder structure

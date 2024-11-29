@@ -10,13 +10,13 @@ class ColorsBrowser extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        ColorRow(color: SepteoColors.blue, title: "Primaire"),
-        ColorRow(color: SepteoColors.orange, title: "Secondaire"),
-        ColorRow(color: SepteoColors.grey, title: "Neutre"),
-        ColorRow(color: SepteoColors.green, title: "Vert"),
-        ColorRow(color: SepteoColors.yellow, title: "Jaune"),
-        ColorRow(color: SepteoColors.red, title: "Rouge"),
-        ColorRow(color: SepteoColors.purple, title: "Violet"),
+        ColorRow(color: SepteoColors.blue, title: "Blue"),
+        ColorRow(color: SepteoColors.orange, title: "Orange"),
+        ColorRow(color: SepteoColors.grey, title: "Grey"),
+        ColorRow(color: SepteoColors.green, title: "Green"),
+        ColorRow(color: SepteoColors.yellow, title: "Yellow"),
+        ColorRow(color: SepteoColors.red, title: "Red"),
+        ColorRow(color: SepteoColors.purple, title: "Purple"),
       ],
     );
   }

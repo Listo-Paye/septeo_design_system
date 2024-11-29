@@ -1,27 +1,18 @@
 # Utilisation des couleurs
 
-Pour utiliser les couleurs, il faut directement les importer depuis le fichier `ListoMainColors` :
+Pour utiliser les couleurs, il faut directement les importer depuis le fichier `SepteoColors` :
 
 ```dart
-import 'package:listo_design_system/themes/septeo_colors.dart';
+import 'package:septeo_design_system/themes/septeo_colors.dart';
 
-var colorBase = ListoMainColors.primary.base;
-var colorUltraLight = ListoMainColors.primary.ultraLight;
-var colorLight = ListoMainColors.primary.light;
-var colorMedium = ListoMainColors.primary.medium;
-var colorDark = ListoMainColors.primary.dark;
-var colorDarker = ListoMainColors.primary.darker;
+var colorBase = SepteoColors.grey;
 ```
 
-Vous pouvez aussi convertir ces couleurs en `MaterialColor` pour les utiliser dans les `ThemeData` :
+Chaque couleur est un MaterialColor, vous pouvez donc utiliser les nuances de couleurs directement :
 
 ```dart
-import 'package:flutter/material.dart';
-import 'package:listo_design_system/themes/septeo_colors.dart';
+import 'package:septeo_design_system/themes/septeo_colors.dart';
 
-var theme = ThemeData(
-  primarySwatch: ListoMainColors.primary.materialColor,
-  primaryColor: ListoMainColors.primary.base,
-  useMaterial3: true,
-);
+var colorBase = SepteoColors.blue;
+var colorLight = SepteoColors.blue.shade200;
 ```
