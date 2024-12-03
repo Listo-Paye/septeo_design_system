@@ -1,6 +1,6 @@
-## 0.0.4
+## 0.0.4+1
 - Fixed Widgetbook legacy code
-- Added MarkdownWithHighlight widget without documentation (for now)
+- Added MarkdownWithHighlight widget without documentation (for now) 
 
 ## 0.0.3
 

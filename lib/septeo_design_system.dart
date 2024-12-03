@@ -7,7 +7,7 @@ import 'foundations/main_theme.dart';
 export 'atomes/atomes_module.dart';
 export 'foundations/foundations_module.dart';
 
-class SepeteoDesignSystem {
+class SepteoDesignSystem {
   static Themes themes = Themes();
 }
 
