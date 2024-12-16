@@ -1,4 +1,5 @@
-## 0.0.4+1
+## 0.0.4+2
+- Fixed Filepicker copile error
 - Fixed Widgetbook legacy code
 - Added MarkdownWithHighlight widget without documentation (for now) 
 
