@@ -1,3 +1,6 @@
+## 0.0.5
+- Added Forms components: TextInput, PercentInput, RadioSelector, OptionSwitch
+
 ## 0.0.4+3
 - Fixed Filepicker copile error
 - Fixed Widgetbook legacy code
