@@ -1,4 +1,4 @@
-## 0.0.5
+## 0.0.5+1
 - Added Forms components: TextInput, PercentInput, RadioSelector, OptionSwitch
 
 ## 0.0.4+3

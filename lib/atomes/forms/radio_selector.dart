@@ -5,6 +5,7 @@ class RadioSelector<T extends Enum> extends StatefulWidget {
   final T? initialValue;
   final List<T> enumValues;
   final void Function(T?) onChanged;
+  final String Function(T)? getLabel;
   final String? errorText;
   const RadioSelector({
     super.key,
@@ -12,6 +13,7 @@ class RadioSelector<T extends Enum> extends StatefulWidget {
     required this.enumValues,
     required this.onChanged,
     this.errorText,
+    this.getLabel,
   });
 
   @override
@@ -21,6 +23,13 @@ class RadioSelector<T extends Enum> extends StatefulWidget {
 class _RadioSelectorState<T extends Enum> extends State<RadioSelector<T>> {
   T? selectedValue;
   Color get errorColor => SepteoColors.red.shade900;
+
+  @override
+  void initState() {
+    selectedValue = widget.initialValue;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -54,7 +63,8 @@ class _RadioSelectorState<T extends Enum> extends State<RadioSelector<T>> {
                     },
                   ),
                   Text(
-                    value.name[0].toUpperCase() + value.name.substring(1),
+                    widget.getLabel?.call(value) ??
+                        value.name[0].toUpperCase() + value.name.substring(1),
                     style: SepteoTextStyles.bodyMediumInter.copyWith(
                       color: widget.errorText == null
                           ? SepteoColors.grey.shade900
