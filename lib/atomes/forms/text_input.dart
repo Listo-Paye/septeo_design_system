@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 
-import 'formatters/amount_formatter.dart';
+import 'formatters/decimal_formatter.dart';
 
 /// A text input widget that allows to input text.
 ///
@@ -61,7 +61,7 @@ class TextDynamicInput<T> extends StatefulWidget {
         onChanged?.call(value);
       },
       enabled: enabled,
-      formatters: [AmountFormatter()],
+      formatters: [DecimalFormatter()],
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.euro),
@@ -85,7 +85,7 @@ class TextDynamicInput<T> extends StatefulWidget {
         onChanged?.call(value != null ? value / 100 : null);
       },
       enabled: enabled,
-      formatters: [AmountFormatter()],
+      formatters: [DecimalFormatter()],
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
       decoration: InputDecoration(
         suffixIcon: const Icon(Icons.percent),
