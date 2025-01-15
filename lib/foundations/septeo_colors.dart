@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Septeo Colors
+///
+/// This class contains the color palette used in the Septeo Design System.
 abstract final class SepteoColors {
   static const MaterialColor grey = MaterialColor(
     0xFF303441,

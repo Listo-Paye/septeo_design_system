@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 
+/// A switch with a label.
+///
+/// The switch is displayed on the right side of the label.
+///
+/// The widget is a stateful widget that requires a [label] to display the label of the switch,
+/// an [initialValue] to set the initial value of the switch, and an [onChanged] callback to be
+/// called when the value of the switch changes.
 class OptionSwitch extends StatefulWidget {
   final String label;
   final bool initialValue;

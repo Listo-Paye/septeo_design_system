@@ -1,3 +1,9 @@
+/// Septeo spacings
+///
+/// This class contains the spacing values used in the Septeo Design System.
+/// It's used to create consistent spacing between elements in the UI.
+///
+/// Could be used in padding, margin, width, height and border radius
 abstract final class SepteoSpacings {
   static const double xxxs = 2;
   static const double xxs = 4;

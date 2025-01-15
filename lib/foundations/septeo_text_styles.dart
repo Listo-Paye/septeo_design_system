@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:septeo_design_system/foundations/septeo_colors.dart';
 
+/// Septeo Text Styles
+///
+/// This class contains all the text styles used in the Septeo Design System.
 abstract final class SepteoTextStyles {
   // Inter Regular (w500)
   static final TextStyle legalContentInter = TextStyle(

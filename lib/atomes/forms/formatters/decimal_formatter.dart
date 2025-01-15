@@ -1,6 +1,11 @@
 import 'package:flutter/services.dart';
 
-class AmountFormatter extends TextInputFormatter {
+/// A [TextInputFormatter] that allows only decimal numbers with two decimal
+/// places.
+///
+/// The formatter replaces the dot character with a comma character and allows
+/// only two decimal places.
+class DecimalFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
