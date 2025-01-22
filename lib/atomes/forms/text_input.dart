@@ -82,7 +82,12 @@ class TextDynamicInput<T> extends StatefulWidget {
       hintText: hintText,
       initialValue: initialValue != null ? initialValue * 100 : null,
       onChanged: (value) {
-        onChanged?.call(value != null ? value / 100 : null);
+        if (onChanged == null) return;
+        var percent = value != null ? value / 100 : null;
+        if (percent != null) {
+          percent = double.parse(percent.toStringAsFixed(2));
+        }
+        onChanged(percent);
       },
       enabled: enabled,
       formatters: [DecimalFormatter()],
