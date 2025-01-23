@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 
 import 'formatters/decimal_formatter.dart';
@@ -80,14 +81,10 @@ class TextDynamicInput<T> extends StatefulWidget {
   }) {
     return TextDynamicInput<double>(
       hintText: hintText,
-      initialValue: initialValue != null ? initialValue * 100 : null,
+      initialValue: _toPercent(initialValue),
       onChanged: (value) {
         if (onChanged == null) return;
-        var percent = value != null ? value / 100 : null;
-        if (percent != null) {
-          percent = double.parse(percent.toStringAsFixed(2));
-        }
-        onChanged(percent);
+        onChanged(_fromPercent(value));
       },
       enabled: enabled,
       formatters: [DecimalFormatter()],
@@ -99,6 +96,22 @@ class TextDynamicInput<T> extends StatefulWidget {
       errorText: errorText,
     );
   }
+}
+
+double? _toPercent(double? value) {
+  if (value == null) return null;
+  return double.parse(
+      NumberFormat.decimalPatternDigits(decimalDigits: 2, locale: 'fr_FR')
+          .format(value * 100)
+          .replaceAll(",", "."));
+}
+
+double? _fromPercent(double? value) {
+  if (value == null) return null;
+  return double.parse(
+      NumberFormat.decimalPatternDigits(decimalDigits: 4, locale: 'fr_FR')
+          .format(value / 100)
+          .replaceAll(",", "."));
 }
 
 typedef Parser<T> = T Function(String value);
