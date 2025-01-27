@@ -7,16 +7,10 @@ Pour utiliser les fonts rajouter dans votre pubspeck.yaml :
   fonts:
     - family: Inter
       fonts:
-        - asset: packages/septeo_design_system/fonts/Inter-Regular.ttf
-          weight: 400
         - asset: packages/septeo_design_system/fonts/Inter-Medium.ttf
           weight: 500
-        - asset: packages/septeo_design_system/fonts/Inter-SemiBold.ttf
-          weight: 600
         - asset: packages/septeo_design_system/fonts/Inter-Bold.ttf
           weight: 700
-        - asset: packages/septeo_design_system/fonts/Inter-ExtraBold.ttf
-          weight: 800
 ```
 
 A l'utilisation il faut passer par la class `SepteoTextStyles` pour utiliser les fonts. 
