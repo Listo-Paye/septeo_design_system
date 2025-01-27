@@ -75,7 +75,7 @@ class DSSButton extends StatelessWidget {
       borderRadius: SepteoSpacings.xs,
       focusColor: SepteoColors.blue.shade600,
       focusWidth: 2,
-      child: ElevatedButton(
+      child: FilledButton(
         style: _buildButtonStyle(),
         onPressed: disabled ? null : onPressed,
         child: _buildChild(),
@@ -89,17 +89,18 @@ class DSSButton extends StatelessWidget {
 
     return ButtonStyle(
       backgroundColor: WidgetStateProperty.resolveWith<Color>(
-            (states) => resolvedColors.resolveBackgroundColor(states),
+        (states) => resolvedColors.resolveBackgroundColor(states),
       ),
       foregroundColor: WidgetStateProperty.resolveWith<Color>(
-            (states) => resolvedColors.resolveForegroundColor(states),
+        (states) => resolvedColors.resolveForegroundColor(states),
       ),
+      shadowColor: WidgetStatePropertyAll(Colors.transparent),
       visualDensity: _getDensity(size),
       fixedSize: fixedSize != null ? WidgetStatePropertyAll(fixedSize!) : null,
       textStyle: WidgetStatePropertyAll<TextStyle>(_getTextStyle(size)),
       padding: WidgetStatePropertyAll(_getPadding(size)),
       shape: WidgetStateProperty.resolveWith<RoundedRectangleBorder>(
-            (states) => RoundedRectangleBorder(
+        (states) => RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(SepteoSpacings.xs),
           side: BorderSide(
             color: resolvedColors.resolveBorderColor(states),
@@ -115,6 +116,8 @@ class DSSButton extends StatelessWidget {
   Widget _buildChild() {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (beforeIcon != null) ...[
           beforeIcon!,
@@ -130,6 +133,7 @@ class DSSButton extends StatelessWidget {
   }
 
   /// Returns the [VisualDensity] based on the provided [DSSButtonSize].
+  /// The [VisualDensity] is used to display smaller buttons than the default possible with material.
   VisualDensity _getDensity(DSSButtonSize size) {
     switch (size) {
       case DSSButtonSize.small:
@@ -142,22 +146,29 @@ class DSSButton extends StatelessWidget {
   }
 
   /// Returns the [EdgeInsets] (padding) based on the provided [DSSButtonSize].
+  /// Values are tweaked based on the [DSSButtonSize] and [VisualDensity] to ensure the button looks consistent.
   EdgeInsets _getPadding(DSSButtonSize size) {
     switch (size) {
       case DSSButtonSize.small:
-        return const EdgeInsets.symmetric(
-          horizontal: SepteoSpacings.md,
-          vertical: 0,
+        return const EdgeInsets.fromLTRB(
+          SepteoSpacings.md,
+          SepteoSpacings.md - 2,
+          SepteoSpacings.md,
+          SepteoSpacings.md + 2,
         );
       case DSSButtonSize.medium:
-        return const EdgeInsets.symmetric(
-          horizontal: SepteoSpacings.md,
-          vertical: SepteoSpacings.xxs,
+        return const EdgeInsets.fromLTRB(
+          SepteoSpacings.md,
+          SepteoSpacings.sm - 2 ,
+          SepteoSpacings.md,
+          SepteoSpacings.sm + 2,
         );
       case DSSButtonSize.large:
-        return const EdgeInsets.symmetric(
-          horizontal: SepteoSpacings.xl,
-          vertical: SepteoSpacings.xs,
+        return const EdgeInsets.fromLTRB(
+          SepteoSpacings.xl,
+          SepteoSpacings.xs - 2,
+          SepteoSpacings.xl,
+          SepteoSpacings.xs + 2,
         );
     }
   }
