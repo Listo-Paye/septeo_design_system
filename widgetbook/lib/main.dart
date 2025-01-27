@@ -22,6 +22,7 @@ class WidgetbookApp extends StatelessWidget {
           'Light': ThemeData.light(),
         }),
         next.DeviceFrameAddon(Devices.all),
+        AlignmentAddon(initialAlignment: Alignment.center),
       ],
     );
   }
