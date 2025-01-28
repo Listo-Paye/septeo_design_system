@@ -9,6 +9,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle legalContentInter = TextStyle(
     fontSize: 10,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -16,6 +17,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle captionInter = TextStyle(
     fontSize: 12,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -23,6 +25,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle bodySmallInter = TextStyle(
     fontSize: 14,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -30,6 +33,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle bodyMediumInter = TextStyle(
     fontSize: 16,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -37,6 +41,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle bodyLargeInter = TextStyle(
     fontSize: 18,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -44,6 +49,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle headingSmallInter = TextStyle(
     fontSize: 22,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -51,6 +57,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle headingMediumInter = TextStyle(
     fontSize: 24,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -58,6 +65,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle headingLargeInter = TextStyle(
     fontSize: 28,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
@@ -65,6 +73,7 @@ abstract final class SepteoTextStyles {
   static final TextStyle heroInter = TextStyle(
     fontSize: 32,
     height: 1.5,
+    letterSpacing: 0.7,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w500,
     color: SepteoColors.grey.shade900,
