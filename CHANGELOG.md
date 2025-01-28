@@ -1,6 +1,7 @@
-## 0.1.0+1
+## 0.1.0+2
 - Added Button component
 - Removed unused fonts
+- Added letter spacings to all text styles
 
 ## 0.0.5+3
 - Added Forms components: TextInput, PercentInput, RadioSelector, OptionSwitch
