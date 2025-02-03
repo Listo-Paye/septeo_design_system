@@ -37,3 +37,43 @@ WidgetbookUseCase usercaseWithMarkdown(
     },
   );
 }
+
+class UseCaseWithMarkdown extends StatelessWidget {
+  final String title;
+  final Widget? Function(BuildContext)? builder;
+  final String? mdAssetPath;
+  const UseCaseWithMarkdown({
+    super.key,
+    required this.title,
+    this.builder,
+    this.mdAssetPath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    Widget? widget = builder == null ? null : builder!(context);
+    return Card(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            Center(
+              child: Text(
+                title,
+                style: GoogleFonts.lato(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            widget ?? Container(),
+            MarkdownWithHighlight.fromAsset(
+              "${kDebugMode ? "" : "assets/"}$mdAssetPath",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

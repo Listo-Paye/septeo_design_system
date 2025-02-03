@@ -1,44 +1,78 @@
 import 'package:flutter/material.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 import 'package:widgetbook/widgetbook.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'package:widgets_demo/use_case_with_markdown.dart';
 
-WidgetbookCategory formsCategory(BuildContext context) {
-  return WidgetbookCategory(name: "Forms", children: [
-    WidgetbookComponent(name: "Inputs", useCases: [
-      usercaseWithMarkdown(
-        "Saisie de texte",
-        (context) => Padding(
-          padding: EdgeInsets.all(8),
-          child: Center(
-            child: TextDynamicInput<String>(
-              hintText:
-                  context.knobs.string(label: "Libellé", initialValue: "Label"),
-              onChanged: (value) {
-                print(value);
-              },
-            ),
-          ),
+const String inputUseCasePath = 'DSS-Components/form';
+
+@widgetbook.UseCase(
+  name: 'Default',
+  type: TextDynamicInput,
+  path: inputUseCasePath,
+  designLink:
+      'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=442-1361&t=jE3Vdd6OYok1n6Cb-4',
+)
+Widget buildDefaultTextDynamicInputUseCase(BuildContext context) {
+  return UseCaseWithMarkdown(
+    title: "Saisie de texte",
+    builder: (context) => Padding(
+      padding: EdgeInsets.all(8),
+      child: Center(
+        child: TextDynamicInput<String>(
+          hintText:
+              context.knobs.string(label: "Libellé", initialValue: "Label"),
+          onChanged: (value) {
+            print(value);
+          },
         ),
-        "markdown/forms_text_input.md",
       ),
-      usercaseWithMarkdown(
-        "Saisie pourcentage",
-        (context) => Percent(),
-        "markdown/forms_percent_input.md",
-      ),
-      usercaseWithMarkdown(
-        "Sélection unique",
-        (context) => Radios(),
-        "markdown/forms_radio.md",
-      ),
-      usercaseWithMarkdown(
-        "Switch",
-        (context) => SwitchExample(),
-        "markdown/forms_switch.md",
-      ),
-    ])
-  ]);
+    ),
+    mdAssetPath: "markdown/forms_text_input.md",
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'TextDynamicInput.percent',
+  type: TextDynamicInput,
+  path: inputUseCasePath,
+)
+Widget buildPercentTextDynamicInputUseCase(BuildContext context) {
+  return UseCaseWithMarkdown(
+    title: "Saisie pourcentage",
+    builder: (context) => Percent(),
+    mdAssetPath: "markdown/forms_percent_input.md",
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'Default',
+  type: RadioSelector,
+  path: inputUseCasePath,
+  designLink:
+      'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-275&t=jE3Vdd6OYok1n6Cb-4',
+)
+Widget buildDefaultRadioSelectorUseCase(BuildContext context) {
+  return UseCaseWithMarkdown(
+    title: "Sélection unique",
+    builder: (context) => Radios(),
+    mdAssetPath: "markdown/forms_radio.md",
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'Default',
+  type: OptionSwitch,
+  path: inputUseCasePath,
+  designLink:
+      'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-305&t=jE3Vdd6OYok1n6Cb-4',
+)
+Widget buildDefaultOptionSwitchUseCase(BuildContext context) {
+  return UseCaseWithMarkdown(
+    title: "Switch",
+    builder: (context) => SwitchExample(),
+    mdAssetPath: "markdown/forms_switch.md",
+  );
 }
 
 class Percent extends StatefulWidget {

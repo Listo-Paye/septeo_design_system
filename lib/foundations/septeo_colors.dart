@@ -7,6 +7,7 @@ abstract final class SepteoColors {
   static const MaterialColor grey = MaterialColor(
     0xFF303441,
     {
+      0: Color(0xFFFFFFFF),
       50: Color(0xFFF5F7F9),
       100: Color(0xFFDDE2EB),
       200: Color(0xFFC5CDDD),
@@ -17,6 +18,7 @@ abstract final class SepteoColors {
       700: Color(0xFF57617A),
       800: Color(0xFF434B5D),
       900: Color(0xFF303441),
+      1000: Color(0xFF000000),
     },
   );
 
