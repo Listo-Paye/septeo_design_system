@@ -17,30 +17,37 @@ La documentation du composant ajouté est indispensable pour permettre aux utili
 Pour celà, il suffit de respecter 3 étapes :
 1. Ajouter un fichier Markdown dans le dossier `widgets_demo/assets/markdown` avec le nom du composant et le contenu de la documentation.
 2. Ajouter un widget dans le dossier `widgets_demo/lib/components` selon le modèle suivant :
-   * Répertoire associé (atomes, molecules, themes) selon l'objectif et la hierarchies du composant dans le design atomique.
+   * Répertoire associé (forms, layout, etc) selon l'objectif et la hierarchies du composant dans le design atomique.
    * Fichier nommé selon le composant (vous pouvez créer un répertoire pour les composants complexes).
    * Le widget ainsi créé sera utilisé pour afficher le composant dans Widgetbook.
    * Créer les éléments d'affichage du composant :
-     ```dart
-     WidgetbookComponent alertsAtom(BuildContext context) {
-       return WidgetbookComponent(name: "Alertes", useCases: [
-         usercaseWithMarkdown(
-           "Alertes",
-           (context) => const AlertsPresenter(),
-           "markdown/atome_alert.md",
-         ),
-       ]);
-     } 
-     ```
-   * Ajouter le composant à la liste des composants dans le fichier `widgets_demo/lib/components/{type de composant}/{type de composant}_module.dart` :
-     ```dart
-     WidgetbookCategory getAtomesCategory(BuildContext context) {
-       return WidgetbookCategory(name: "Atomes", children: [
-         buttonsAtom(context),
-         alertsAtom(context),
-       ]);
-     }
-     ```
+```dart
+@widgetbook.UseCase(
+  name: 'Default',
+  type: TextDynamicInput,
+  path: inputUseCasePath,
+  designLink:
+      'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=442-1361&t=jE3Vdd6OYok1n6Cb-4',
+)
+Widget buildDefaultTextDynamicInputUseCase(BuildContext context) {
+  return UseCaseWithMarkdown(
+    title: "Saisie de texte",
+    builder: (context) => Padding(
+      padding: EdgeInsets.all(8),
+      child: Center(
+        child: TextDynamicInput<String>(
+          hintText:
+              context.knobs.string(label: "Libellé", initialValue: "Label"),
+          onChanged: (value) {
+            print(value);
+          },
+        ),
+      ),
+    ),
+    mdAssetPath: "markdown/forms_text_input.md",
+  );
+}
+```
 
 
 ## Règles de Commit
@@ -60,6 +67,25 @@ feat(design): [Description courte du changement]
 - **refactor**: Modification du code sans ajouter de fonctionnalité ni corriger de bug.
 - **perf**: Modification du code pour améliorer les performances.
 - **book**: Ajout ou modification de la partie WidgetBook (comportement général).
+
+## Pull Requests
+
+Pour vérifier les différences dans les composants, chaque nouvelle pull request est envoyée à widgetbook cloud qui s'occupe de mettre en lumière les différences et présente le nouveau contenu.
+Afin d'économiser nos ressources serveurs, il est recommandé de ne pas envoyer de pull request avant d'avoir terminé les développements.
+
+Vous pouvez toujours tester vos composants localement en utilisant la commande `flutter run` dans le dossier `widgets_demo`.
+Vous pouvez aussi créer et pousser vos branches comme bon vous semble. Seuls la branche main et les commits de pull request seront analysés.
+
+Lorsque vous soumettez une Pull Request, assurez-vous que :
+* Votre code est bien documenté et suit les conventions de nommage.
+* La documentation est à jour pour refléter les changements apportés.
+* Les dépendances tierces sont ajoutées avec discernement et justifiées.
+* Les changements sont testés sur différents appareils et résolutions d'écran.
+* Les changements sont conformes aux directives de conception et aux principes de Material Design.
+* Les changements sont conformes aux bonnes pratiques de Flutter et aux normes de codage.
+* Les changements sont conformes aux principes de performance et d'accessibilité.
+* Les changements sont conformes aux principes de design moléculaire et d'animation.
+* Les changements sont conformes aux principes de Widgetbook et de documentation.
 
 ## Design Moléculaire
 
