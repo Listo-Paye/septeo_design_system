@@ -1028,9 +1028,10 @@ packages:
   widgetbook_documentation_addon:
     dependency: "direct main"
     description:
-      path: "../../../github/widgetbook_documentation_addon"
-      relative: true
-    source: path
+      name: widgetbook_documentation_addon
+      sha256: "4e298288a3100ab8a62adf806aea292bbf9becc53eff36f4ee7b65a40d2a1b35"
+      url: "https://pub.dev"
+    source: hosted
     version: "1.0.0"
   widgetbook_generator:
     dependency: "direct dev"
