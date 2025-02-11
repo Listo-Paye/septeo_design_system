@@ -1,4 +1,3 @@
---- 
 ### Installation
 
 Pour utiliser les fonts rajouter dans votre pubspeck.yaml : 

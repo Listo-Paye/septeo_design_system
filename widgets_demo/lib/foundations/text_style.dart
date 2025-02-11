@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:septeo_design_system/foundations/septeo_text_styles.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-import 'package:widgets_demo/use_case_with_markdown.dart';
 
 @widgetbook.UseCase(
   name: 'Default',
@@ -11,11 +10,7 @@ import 'package:widgets_demo/use_case_with_markdown.dart';
       'https://www.figma.com/design/fZEEBhB6gPatiNb9FJU97r/DSS-Foundations?node-id=246-1589&t=dU484bldRHVobedF-4',
 )
 Widget buildCoolButtonUseCase(BuildContext context) {
-  return UseCaseWithMarkdown(
-    title: "TextStyles",
-    builder: (context) => const TextStyles(),
-    mdAssetPath: "markdown/text_styles.md",
-  );
+  return const TextStyles();
 }
 
 class TextStyles extends StatelessWidget {

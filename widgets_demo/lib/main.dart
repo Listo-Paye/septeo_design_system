@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart' show usePathUrlStrategy;
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+import 'package:widgetbook_documentation_addon/widgetbook_documentation_addon.dart';
 
 import 'main.directories.g.dart';
-import 'use_case_with_markdown.dart';
 
 void main() {
   usePathUrlStrategy();
@@ -24,7 +24,9 @@ class HotReload extends StatelessWidget {
     var device = params["device"] ?? '{name:None}';
     return Widgetbook.material(
       initialRoute: "/?path=$path&knobs=$knobs&device=$device",
+      themeMode: ThemeMode.light,
       addons: [
+        DocumentationAddon(),
         DeviceFrameAddon(devices: [
           ...Devices.android.all,
           ...Devices.ios.all,
@@ -33,13 +35,6 @@ class HotReload extends StatelessWidget {
         ]),
       ],
       directories: [
-        WidgetbookComponent(name: "Accueil", useCases: [
-          usercaseWithMarkdown(
-            "README",
-            null,
-            "markdown/introduction.md",
-          ),
-        ]),
         ...directories,
       ],
     );
