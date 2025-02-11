@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -56,23 +57,37 @@ class UseCaseWithMarkdown extends StatelessWidget {
       color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView(
+        child: ResizableContainer(
+          direction: Axis.vertical,
           children: [
-            Center(
-              child: Text(
-                title,
-                style: GoogleFonts.lato(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+            ResizableChild(
+              size: const ResizableSize.expand(flex: 2),
+              child: ListView(
+                children: [
+                  Center(
+                    child: Text(
+                      title,
+                      style: GoogleFonts.lato(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  widget ?? Container(),
+                ],
               ),
             ),
-            widget ?? Container(),
-            MarkdownWithHighlight.fromAsset(
-              "${kDebugMode ? "" : "assets/"}$mdAssetPath",
+            ResizableChild(
+              size: const ResizableSize.expand(flex: 1),
+              child: MarkdownWithHighlight.fromAsset(
+                "${kDebugMode ? "" : "assets/"}$mdAssetPath",
+              ),
+              minSize: 100,
             ),
           ],
         ),
+        //],
+        //),
       ),
     );
   }

@@ -1,8 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:septeo_design_system/septeo_design_system.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-import 'package:widgets_demo/use_case_with_markdown.dart';
 
 const String inputUseCasePath = 'DSS-Components/form';
 
@@ -14,34 +14,30 @@ const String inputUseCasePath = 'DSS-Components/form';
       'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=442-1361&t=jE3Vdd6OYok1n6Cb-4',
 )
 Widget buildDefaultTextDynamicInputUseCase(BuildContext context) {
-  return UseCaseWithMarkdown(
-    title: "Saisie de texte",
-    builder: (context) => Padding(
-      padding: EdgeInsets.all(8),
-      child: Center(
-        child: TextDynamicInput<String>(
-          hintText:
-              context.knobs.string(label: "Libellé", initialValue: "Label"),
-          onChanged: (value) {
+  return Padding(
+    padding: EdgeInsets.all(8),
+    child: Center(
+      child: TextDynamicInput<String>(
+        hintText: context.knobs.string(label: "Libellé", initialValue: "Label"),
+        onChanged: (value) {
+          if (kDebugMode) {
             print(value);
-          },
-        ),
+          }
+        },
       ),
     ),
-    mdAssetPath: "markdown/forms_text_input.md",
   );
 }
 
 @widgetbook.UseCase(
-  name: 'TextDynamicInput.percent',
+  name: 'Percent',
   type: TextDynamicInput,
   path: inputUseCasePath,
 )
 Widget buildPercentTextDynamicInputUseCase(BuildContext context) {
-  return UseCaseWithMarkdown(
-    title: "Saisie pourcentage",
-    builder: (context) => Percent(),
-    mdAssetPath: "markdown/forms_percent_input.md",
+  return Padding(
+    padding: const EdgeInsets.all(40.0),
+    child: Percent(),
   );
 }
 
@@ -53,10 +49,9 @@ Widget buildPercentTextDynamicInputUseCase(BuildContext context) {
       'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-275&t=jE3Vdd6OYok1n6Cb-4',
 )
 Widget buildDefaultRadioSelectorUseCase(BuildContext context) {
-  return UseCaseWithMarkdown(
-    title: "Sélection unique",
-    builder: (context) => Radios(),
-    mdAssetPath: "markdown/forms_radio.md",
+  return Padding(
+    padding: const EdgeInsets.all(40.0),
+    child: Radios(),
   );
 }
 
@@ -68,10 +63,9 @@ Widget buildDefaultRadioSelectorUseCase(BuildContext context) {
       'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-305&t=jE3Vdd6OYok1n6Cb-4',
 )
 Widget buildDefaultOptionSwitchUseCase(BuildContext context) {
-  return UseCaseWithMarkdown(
-    title: "Switch",
-    builder: (context) => SwitchExample(),
-    mdAssetPath: "markdown/forms_switch.md",
+  return Padding(
+    padding: const EdgeInsets.all(40.0),
+    child: SwitchExample(),
   );
 }
 
