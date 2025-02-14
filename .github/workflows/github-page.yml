@@ -51,11 +51,10 @@ jobs:
           cd widgets_demo  
           flutter pub get
       - name: Build Widgetbook
-        working-directory: widgets_demo
         run: |
-          flutter pub get
+          cd widgets_demo  
           dart run build_runner build -d
-          flutter build web -t lib/main.dart
+          flutter build web --release
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
