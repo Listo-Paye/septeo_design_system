@@ -1,3 +1,6 @@
+## 0.1.1
+- Fixed crash with TextDynamicInput.percent double parsing
+
 ## 0.1.0+3
 - Added Button component
 - Removed unused fonts

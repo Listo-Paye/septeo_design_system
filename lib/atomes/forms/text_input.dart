@@ -100,18 +100,14 @@ class TextDynamicInput<T> extends StatefulWidget {
 
 double? _toPercent(double? value) {
   if (value == null) return null;
-  return double.parse(
-      NumberFormat.decimalPatternDigits(decimalDigits: 2, locale: 'fr_FR')
-          .format(value * 100)
-          .replaceAll(",", "."));
+  final format = NumberFormat.decimalPatternDigits(decimalDigits: 2, locale: 'fr_FR');
+  return format.parse(format.format(value * 100)).toDouble();
 }
 
 double? _fromPercent(double? value) {
   if (value == null) return null;
-  return double.parse(
-      NumberFormat.decimalPatternDigits(decimalDigits: 4, locale: 'fr_FR')
-          .format(value / 100)
-          .replaceAll(",", "."));
+  final format = NumberFormat.decimalPatternDigits(decimalDigits: 4, locale: 'fr_FR');
+  return format.parse(format.format(value / 100)).toDouble();
 }
 
 typedef Parser<T> = T Function(String value);
