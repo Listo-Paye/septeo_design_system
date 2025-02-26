@@ -1,3 +1,9 @@
 # widget_demo
 
-A new Flutter project.
+```shell
+cd widgets_demo
+```
+
+```shell
+dart run build_runner watch --delete-conflicting-outputs
+```

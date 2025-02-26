@@ -10,9 +10,10 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:widgetbook/widgetbook.dart' as _i1;
-import 'package:widgets_demo/components/forms/inputs.dart' as _i3;
-import 'package:widgets_demo/foundations/color_scale.dart' as _i4;
-import 'package:widgets_demo/foundations/text_style.dart' as _i5;
+import 'package:widgets_demo/components/forms/buttons.dart' as _i3;
+import 'package:widgets_demo/components/forms/inputs.dart' as _i4;
+import 'package:widgets_demo/foundations/color_scale.dart' as _i5;
+import 'package:widgets_demo/foundations/text_style.dart' as _i6;
 import 'package:widgets_demo/readme.dart' as _i2;
 
 final directories = <_i1.WidgetbookNode>[
@@ -30,10 +31,17 @@ final directories = <_i1.WidgetbookNode>[
         name: 'form',
         children: [
           _i1.WidgetbookLeafComponent(
+            name: 'DSSButton',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'Default',
+              builder: _i3.buildLargeDSSButtonUseCase,
+            ),
+          ),
+          _i1.WidgetbookLeafComponent(
             name: 'OptionSwitch',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i3.buildDefaultOptionSwitchUseCase,
+              builder: _i4.buildDefaultOptionSwitchUseCase,
               designLink:
                   'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-305&t=jE3Vdd6OYok1n6Cb-4',
             ),
@@ -42,7 +50,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'RadioSelector',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i3.buildDefaultRadioSelectorUseCase,
+              builder: _i4.buildDefaultRadioSelectorUseCase,
               designLink:
                   'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=203-275&t=jE3Vdd6OYok1n6Cb-4',
             ),
@@ -52,13 +60,13 @@ final directories = <_i1.WidgetbookNode>[
             useCases: [
               _i1.WidgetbookUseCase(
                 name: 'Default',
-                builder: _i3.buildDefaultTextDynamicInputUseCase,
+                builder: _i4.buildDefaultTextDynamicInputUseCase,
                 designLink:
                     'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=442-1361&t=jE3Vdd6OYok1n6Cb-4',
               ),
               _i1.WidgetbookUseCase(
                 name: 'Percent',
-                builder: _i3.buildPercentTextDynamicInputUseCase,
+                builder: _i4.buildPercentTextDynamicInputUseCase,
               ),
             ],
           ),
@@ -73,7 +81,7 @@ final directories = <_i1.WidgetbookNode>[
         name: 'ColorScale',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i4.buildCoolButtonUseCase,
+          builder: _i5.buildCoolButtonUseCase,
           designLink:
               'https://www.figma.com/design/fZEEBhB6gPatiNb9FJU97r/DSS-Foundations?node-id=165-450&t=dU484bldRHVobedF-4',
         ),
@@ -82,7 +90,7 @@ final directories = <_i1.WidgetbookNode>[
         name: 'TextStyles',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i5.buildCoolButtonUseCase,
+          builder: _i6.buildCoolButtonUseCase,
           designLink:
               'https://www.figma.com/design/fZEEBhB6gPatiNb9FJU97r/DSS-Foundations?node-id=246-1589&t=dU484bldRHVobedF-4',
         ),
