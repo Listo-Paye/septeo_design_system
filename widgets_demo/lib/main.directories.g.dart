@@ -35,6 +35,8 @@ final directories = <_i1.WidgetbookNode>[
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
               builder: _i3.buildLargeDSSButtonUseCase,
+              designLink:
+                  'https://www.figma.com/design/a63JhE1ZLqW81bvCNXKIvL/DSS-Component?node-id=1-54',
             ),
           ),
           _i1.WidgetbookLeafComponent(

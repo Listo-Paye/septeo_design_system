@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_web_plugins/url_strategy.dart' show usePathUrlStrategy;
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
@@ -17,8 +18,9 @@ class HotReload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, String> params =
-        Map.fromEntries(Uri.base.queryParameters.entries);
+    Map<String, String> params = Map.fromEntries(
+      Uri.base.queryParameters.entries,
+    );
     var path = params["path"] ?? 'accueil%2Freadme';
     var knobs = params["knobs"] ?? '{}';
     var device = params["device"] ?? '{name:None}';
@@ -26,17 +28,17 @@ class HotReload extends StatelessWidget {
       initialRoute: "/?path=$path&knobs=$knobs&device=$device",
       themeMode: ThemeMode.light,
       addons: [
-        DocumentationAddon(),
-        DeviceFrameAddon(devices: [
-          ...Devices.android.all,
-          ...Devices.ios.all,
-          Devices.linux.laptop,
-          Devices.windows.wideMonitor,
-        ]),
+        DocumentationAddon(assetBundle: rootBundle),
+        DeviceFrameAddon(
+          devices: [
+            ...Devices.android.all,
+            ...Devices.ios.all,
+            Devices.linux.laptop,
+            Devices.windows.wideMonitor,
+          ],
+        ),
       ],
-      directories: [
-        ...directories,
-      ],
+      directories: [...directories],
     );
   }
 }
