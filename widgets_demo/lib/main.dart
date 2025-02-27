@@ -29,6 +29,7 @@ class HotReload extends StatelessWidget {
       themeMode: ThemeMode.light,
       addons: [
         DocumentationAddon(assetBundle: rootBundle),
+        InspectorAddon(enabled: true),
         DeviceFrameAddon(
           devices: [
             ...Devices.android.all,
