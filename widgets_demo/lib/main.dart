@@ -28,8 +28,8 @@ class HotReload extends StatelessWidget {
       initialRoute: "/?path=$path&knobs=$knobs&device=$device",
       themeMode: ThemeMode.light,
       addons: [
-        DocumentationAddon(assetBundle: rootBundle),
         InspectorAddon(enabled: true),
+        DocumentationAddon(assetBundle: rootBundle),
         DeviceFrameAddon(
           devices: [
             ...Devices.android.all,
