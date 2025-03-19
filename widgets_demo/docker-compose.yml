@@ -1,0 +1,7 @@
+services:
+  flutter_web:
+    build:
+      context: ../
+      dockerfile: widgets_demo/Dockerfile
+    ports:
+      - "80:80"
