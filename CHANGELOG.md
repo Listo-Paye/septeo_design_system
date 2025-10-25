@@ -1,3 +1,6 @@
+## 0.1.1+1
+- Dependencies update
+
 ## 0.1.1
 - Fixed crash with TextDynamicInput.percent double parsing
 
